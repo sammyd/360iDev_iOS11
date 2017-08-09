@@ -1,0 +1,109 @@
+{
+  "store": [
+    0,
+    [
+      {
+        "id": "WEB-756",
+        "label": "Users experience playback issues when watching at 1.5 or 2x speed",
+        "priority": 1,
+        "context": 0
+      },
+      {
+        "id": "WEB-180",
+        "label": "The video page is missing the author bio",
+        "priority": 0,
+        "context": 0
+      },
+      {
+        "id": "WEB-273",
+        "label": "Users are unable to view challenge videos",
+        "priority": 2,
+        "context": 0
+      },
+      {
+        "id": "WEB-715",
+        "label": "Some users are receiving duplicate notifications",
+        "priority": 1,
+        "context": 0
+      },
+      {
+        "id": "WEB-211",
+        "label": "The video player isn't visible in IE 10 or Firefox on Windows",
+        "priority": 2,
+        "context": 0
+      },
+      {
+        "id": "WEB-279",
+        "label": "Clicking, rather than hovering over a top level menu item leaves it open",
+        "priority": 0,
+        "context": 0
+      },
+      {
+        "id": "WEB-267",
+        "label": "The slider height is specified incorrectly in video.css",
+        "priority": 0,
+        "context": 0
+      },
+      {
+        "id": "WEB-253",
+        "label": "The subscription status should be cached on the User model",
+        "priority": 2,
+        "context": 0
+      },
+      {
+        "id": "WEB-245",
+        "label": "The active class is missing from the drop-down links in the Video menu",
+        "priority": 0,
+        "context": 0
+      },
+      {
+        "id": "WEB-7216",
+        "label": "Users are unable to manually select the playback quality",
+        "priority": 1,
+        "context": 0
+      }
+    ],
+    1,
+    [
+      {
+        "id":"WEB-813",
+        "label":"Inserting media using the CMS sporadically deletes the surrounding content",
+        "priority":1,
+        "context": 1
+      },
+      {
+        "id":"WEB-696",
+        "label":"Failed orders aren't being logged correctly",
+        "priority":2,
+        "context": 1
+      }
+    ],
+    2,
+    [
+      {
+        "id":"WEB-423",
+        "label":"Users can't login using the button in the forum header",
+        "priority":1,
+        "context": 2
+      },
+      {
+        "id":"WEB-092",
+        "label":"Logging out should be synced across all browsers and devices",
+        "priority":0,
+        "context": 2
+      },
+      {
+        "id":"WEB-765",
+        "label":"Push notifications can't be disabled on individual posts",
+        "priority":1,
+        "context": 2
+      },
+      {
+        "id":"WEB-810",
+        "label":"The syntax highlighter is excluding certain Swift keywords",
+        "priority":2,
+        "context": 2
+      }
+    ]
+  ]
+}
