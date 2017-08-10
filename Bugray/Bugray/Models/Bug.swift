@@ -32,13 +32,13 @@ import Foundation
 
 class Bug: Codable {
   
-  enum Context: Int, Codable {
+  enum Context: String, Codable {
     case toDo
     case inProgress
     case done
   }
   
-  enum Priority: Int, Codable {
+  enum Priority: String, Codable {
     case low
     case medium
     case high
