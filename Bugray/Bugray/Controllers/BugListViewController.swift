@@ -44,6 +44,7 @@ class BugListViewController: UIViewController {
     setContextTitle()
     collectionView.dataSource = self
     collectionView.delegate = self
+    collectionView.dragDelegate = self
   }
   
   private func setContextTitle() {
@@ -80,3 +81,12 @@ extension BugListViewController: UICollectionViewDelegateFlowLayout {
     return CGSize(width: collectionView.bounds.width, height: 100)
   }
 }
+
+extension BugListViewController: UICollectionViewDragDelegate {
+  func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+    let item = UIDragItem(itemProvider: NSItemProvider())
+    return [item]
+  }
+}
+
+
