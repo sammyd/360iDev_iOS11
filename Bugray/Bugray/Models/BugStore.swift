@@ -30,11 +30,18 @@
 
 import Foundation
 
-class BugStore {
+class BugStore: Codable {
   
   static let sharedStore: BugStore = {
     var store = BugStore.emptyStore()
-    // TODO
+    if let url = Bundle.main.url(forResource: "bugs", withExtension: "json") {
+      do {
+        let data = try Data(contentsOf: url)
+        store = try JSONDecoder().decode(BugStore.self, from: data)
+      } catch let error {
+        print(error)
+      }
+    }
     return store
   }()
   

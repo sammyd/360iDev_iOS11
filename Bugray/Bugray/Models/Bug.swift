@@ -30,15 +30,15 @@
 
 import Foundation
 
-class Bug {
+class Bug: Codable {
   
-  enum Context {
+  enum Context: Int, Codable {
     case toDo
     case inProgress
     case done
   }
   
-  enum Priority {
+  enum Priority: Int, Codable {
     case low
     case medium
     case high
