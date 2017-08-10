@@ -99,5 +99,9 @@ extension BugListViewController: UICollectionViewDropDelegate {
   func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
     // Leave it blank for now
   }
+  
+  func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+    return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+  }
 }
 
