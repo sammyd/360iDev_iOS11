@@ -103,11 +103,36 @@ extension BugListViewController: UICollectionViewDropDelegate {
     dragCoordinator.destinationIndexPaths = [indexPath]
     dragCoordinator.destination = context
     
-    print(dragCoordinator.source, dragCoordinator.destination, dragCoordinator.sourceIndexPaths, dragCoordinator.destinationIndexPaths!.first)
+    moveBugs(using: dragCoordinator, performingDropWith: coordinator)
   }
   
   func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
     return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+  }
+  
+  private func moveBugs(using dragCoordinator: BugDragCoordinator, performingDropWith dropCoordinator: UICollectionViewDropCoordinator) {
+    guard let destination = dragCoordinator.destination,
+      let destinationIndexPaths = dragCoordinator.destinationIndexPaths else { return }
+    
+    let bugs = BugStore.sharedStore.deleteBugs(at: dragCoordinator.sourceIndexes, in: dragCoordinator.source)
+    
+    for (index, item) in dropCoordinator.items.enumerated() {
+      let sourceIndexPath = dragCoordinator.sourceIndexPaths[index]
+      let destinationIndexPath = destinationIndexPaths[index]
+      
+      collectionView.performBatchUpdates({
+        BugStore.sharedStore.insert(bugs: [bugs[index]], into: destination, at: destinationIndexPath.item)
+        if dragCoordinator.isReordering {
+          self.collectionView.moveItem(at: sourceIndexPath, to: destinationIndexPath)
+        } else {
+          self.collectionView.insertItems(at: [destinationIndexPath])
+        }
+      }, completion: { _ in
+        self.setBugCount()
+      })
+      dropCoordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+    }
+    dragCoordinator.dragCompleted = true
   }
 }
 
