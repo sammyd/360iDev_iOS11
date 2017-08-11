@@ -29,6 +29,7 @@
  */
 
 import UIKit
+import MobileCoreServices
 
 class BugListViewController: UIViewController {
   
@@ -114,10 +115,12 @@ extension BugListViewController: UICollectionViewDragDelegate {
 
 extension BugListViewController: UICollectionViewDropDelegate {
   func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
-    return session.localDragSession != nil
+    return session.hasItemsConforming(toTypeIdentifiers: [kUTTypePlainText as String]) ||
+      session.localDragSession != nil
   }
   
   func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+    
     guard let dragCoordinator = coordinator.session.localDragSession?.localContext as? BugDragCoordinator else { return }
     let indexPath = coordinator.destinationIndexPath ?? IndexPath(item: collectionView.numberOfItems(inSection: 0), section: 0)
     dragCoordinator.calculateDestinationIndexPaths(from: indexPath, count: coordinator.items.count)
@@ -127,7 +130,13 @@ extension BugListViewController: UICollectionViewDropDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
-    return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+    let operation: UIDropOperation
+    if let _ = session.localDragSession {
+      operation = .move
+    } else {
+      operation = .copy
+    }
+    return UICollectionViewDropProposal(operation: operation, intent: .insertAtDestinationIndexPath)
   }
   
   private func moveBugs(using dragCoordinator: BugDragCoordinator, performingDropWith dropCoordinator: UICollectionViewDropCoordinator) {
