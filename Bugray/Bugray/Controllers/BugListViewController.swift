@@ -89,6 +89,19 @@ extension BugListViewController: UICollectionViewDragDelegate {
     session.localContext = dragCoordinator
     return [dragCoordinator.dragItemForBugAt(indexPath: indexPath)]
   }
+  
+  func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
+    guard let dragCoordinator = session.localContext as? BugDragCoordinator,
+      dragCoordinator.source == context,
+      dragCoordinator.dragCompleted == true,
+      dragCoordinator.isReordering == false else { return }
+    
+    collectionView.performBatchUpdates({
+      collectionView.deleteItems(at: dragCoordinator.sourceIndexPaths)
+    }) { _ in
+      self.setBugCount()
+    }
+  }
 }
 
 
