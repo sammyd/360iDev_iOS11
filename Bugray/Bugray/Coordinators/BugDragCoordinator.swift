@@ -46,4 +46,9 @@ class BugDragCoordinator {
     sourceIndexPaths.append(indexPath)
     return UIDragItem(itemProvider: NSItemProvider())
   }
+  
+  func calculateDestinationIndexPaths(from indexPath: IndexPath, count: Int) {
+    let indexes = Array(indexPath.item ..< (indexPath.item + count))
+    destinationIndexPaths = indexes.map { IndexPath(item: $0, section: 0) }
+  }
 }
