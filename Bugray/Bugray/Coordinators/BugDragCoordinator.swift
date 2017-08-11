@@ -44,7 +44,9 @@ class BugDragCoordinator {
   
   func dragItemForBugAt(indexPath: IndexPath) -> UIDragItem {
     sourceIndexPaths.append(indexPath)
-    return UIDragItem(itemProvider: NSItemProvider())
+    let bug = BugStore.sharedStore.bug(at: indexPath.item, in: source)
+    let bugProvider = NSItemProvider(object: bug.label as NSString)
+    return UIDragItem(itemProvider: bugProvider)
   }
   
   func calculateDestinationIndexPaths(from indexPath: IndexPath, count: Int) {
