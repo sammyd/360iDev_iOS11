@@ -85,4 +85,11 @@ class BugStore: Codable {
       .map { $0.element }
     return plucked
   }
+  
+  @discardableResult
+  func addBug(at index: Int, in context: Bug.Context, name: String) -> Bug {
+    let bug = Bug(id: "WEB-XXX", label: name, context: context, priority: .medium)
+    insert(bugs: [bug], into: context, at: index)
+    return bug
+  }
 }
