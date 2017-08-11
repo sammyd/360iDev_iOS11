@@ -85,8 +85,9 @@ extension BugListViewController: UICollectionViewDelegateFlowLayout {
 
 extension BugListViewController: UICollectionViewDragDelegate {
   func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-    let item = UIDragItem(itemProvider: NSItemProvider())
-    return [item]
+    let dragCoordinator = BugDragCoordinator(source: context)
+    session.localContext = dragCoordinator
+    return [dragCoordinator.dragItemForBugAt(indexPath: indexPath)]
   }
 }
 
@@ -97,7 +98,12 @@ extension BugListViewController: UICollectionViewDropDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-    // Leave it blank for now
+    guard let dragCoordinator = coordinator.session.localDragSession?.localContext as? BugDragCoordinator else { return }
+    let indexPath = coordinator.destinationIndexPath ?? IndexPath(item: collectionView.numberOfItems(inSection: 0), section: 0)
+    dragCoordinator.destinationIndexPaths = [indexPath]
+    dragCoordinator.destination = context
+    
+    print(dragCoordinator.source, dragCoordinator.destination, dragCoordinator.sourceIndexPaths, dragCoordinator.destinationIndexPaths!.first)
   }
   
   func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
