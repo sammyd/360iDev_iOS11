@@ -69,22 +69,78 @@
 		0A5EA8421F07E6D6006E6651 /* SMDB */ = {
 			isa = PBXGroup;
 			children = (
-				0A5EA8431F07E6D6006E6651 /* AppDelegate.swift */,
-				0A5EA8591F07F1B8006E6651 /* ReviewsTableViewController.swift */,
-				0A5EA85D1F083434006E6651 /* ReviewTableViewCell.swift */,
-				4C9B08941F0C8D22009C7DCD /* MovieListTableViewController.swift */,
-				4C82E2521F0C9D0300C76453 /* ActorListTableViewController.swift */,
-				0A5BEDC91F0B261300AB37C5 /* Review.swift */,
-				0A5BEDC81F0B261300AB37C5 /* ReviewsManager.swift */,
-				0A5BEDC51F0AECB600AB37C5 /* NLPHelper.swift */,
-				0A5EA8471F07E6D6006E6651 /* Main.storyboard */,
-				4C9B08C51F0C980D009C7DCD /* LaunchScreen.storyboard */,
-				0A5EA84A1F07E6D6006E6651 /* Assets.xcassets */,
-				0A5EA8551F07EE54006E6651 /* reviews.json */,
-				0A5EA84F1F07E6D6006E6651 /* Info.plist */,
-				22F368B41F3F6B70004068E8 /* Sentiment.mlmodel */,
+				22F368B91F3F6DBD004068E8 /* Assets */,
+				22F368B51F3F6D89004068E8 /* Controllers */,
+				22F368BB1F3F6DDC004068E8 /* Misc */,
+				22F368B71F3F6DA4004068E8 /* Models */,
+				22F368B81F3F6DB1004068E8 /* NLP */,
+				22F368BA1F3F6DD2004068E8 /* Storyboards */,
+				22F368B61F3F6D96004068E8 /* Views */,
 			);
 			path = SMDB;
+			sourceTree = "<group>";
+		};
+		22F368B51F3F6D89004068E8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A5EA8591F07F1B8006E6651 /* ReviewsTableViewController.swift */,
+				4C9B08941F0C8D22009C7DCD /* MovieListTableViewController.swift */,
+				4C82E2521F0C9D0300C76453 /* ActorListTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		22F368B61F3F6D96004068E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A5EA85D1F083434006E6651 /* ReviewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22F368B71F3F6DA4004068E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A5BEDC91F0B261300AB37C5 /* Review.swift */,
+				0A5BEDC81F0B261300AB37C5 /* ReviewsManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22F368B81F3F6DB1004068E8 /* NLP */ = {
+			isa = PBXGroup;
+			children = (
+				0A5BEDC51F0AECB600AB37C5 /* NLPHelper.swift */,
+				22F368B41F3F6B70004068E8 /* Sentiment.mlmodel */,
+			);
+			path = NLP;
+			sourceTree = "<group>";
+		};
+		22F368B91F3F6DBD004068E8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0A5EA8551F07EE54006E6651 /* reviews.json */,
+				0A5EA84A1F07E6D6006E6651 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		22F368BA1F3F6DD2004068E8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0A5EA8471F07E6D6006E6651 /* Main.storyboard */,
+				4C9B08C51F0C980D009C7DCD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		22F368BB1F3F6DDC004068E8 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				0A5EA8431F07E6D6006E6651 /* AppDelegate.swift */,
+				0A5EA84F1F07E6D6006E6651 /* Info.plist */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
