@@ -32,8 +32,7 @@ import Foundation
 import CoreML
 
 func getLanguage(text: String) -> String? {
-  //To be replaced
-  return nil
+  return NSLinguisticTagger.dominantLanguage(for: text)
 }
 
 func getSearchTerms(text: String, block: (String) -> Void) {
