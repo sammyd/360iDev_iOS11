@@ -35,7 +35,7 @@ func getLanguage(text: String) -> String? {
   return NSLinguisticTagger.dominantLanguage(for: text)
 }
 
-func getSearchTerms(text: String, block: (String) -> Void) {
+func getSearchTerms(text: String, language: String? = .none, block: (String) -> Void) {
   let tagger = NSLinguisticTagger(tagSchemes: [.lemma], options: 0)
   tagger.string = text
   
@@ -45,6 +45,10 @@ func getSearchTerms(text: String, block: (String) -> Void) {
                                              .joinNames]
   
   let range = NSRange(text.startIndex..., in: text)
+  if let language = language {
+    tagger.setOrthography(NSOrthography.defaultOrthography(forLanguage: language), range: range)
+  }
+  
   tagger.enumerateTags(in: range, unit: .word, scheme: .lemma, options: options) { (tag, tokenRange, _) in
     guard let tag = tag else { return }
     block(tag.rawValue.lowercased())
