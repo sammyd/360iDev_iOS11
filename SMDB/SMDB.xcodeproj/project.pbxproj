@@ -16,7 +16,6 @@
 		0A5EA8561F07EE54006E6651 /* reviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5EA8551F07EE54006E6651 /* reviews.json */; };
 		0A5EA85A1F07F1B8006E6651 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA8591F07F1B8006E6651 /* ReviewsTableViewController.swift */; };
 		0A5EA85E1F083434006E6651 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA85D1F083434006E6651 /* ReviewTableViewCell.swift */; };
-		0A8486E51F0C22B000897A44 /* Sentiment.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0A8486E41F0C21C500897A44 /* Sentiment.mlmodel */; };
 		4C82E2531F0C9D0300C76453 /* ActorListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C82E2521F0C9D0300C76453 /* ActorListTableViewController.swift */; };
 		4C9B08951F0C8D22009C7DCD /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B08941F0C8D22009C7DCD /* MovieListTableViewController.swift */; };
 		4C9B08C61F0C980D009C7DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B08C51F0C980D009C7DCD /* LaunchScreen.storyboard */; };
@@ -34,7 +33,7 @@
 		0A5EA8551F07EE54006E6651 /* reviews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reviews.json; sourceTree = "<group>"; };
 		0A5EA8591F07F1B8006E6651 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
 		0A5EA85D1F083434006E6651 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		0A8486E41F0C21C500897A44 /* Sentiment.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sentiment.mlmodel; sourceTree = "<group>"; };
+		22F368B41F3F6B70004068E8 /* Sentiment.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Sentiment.mlmodel; sourceTree = "<group>"; };
 		4C82E2521F0C9D0300C76453 /* ActorListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorListTableViewController.swift; sourceTree = "<group>"; };
 		4C9B08941F0C8D22009C7DCD /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
 		4C9B08C51F0C980D009C7DCD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,9 +80,9 @@
 				0A5EA8471F07E6D6006E6651 /* Main.storyboard */,
 				4C9B08C51F0C980D009C7DCD /* LaunchScreen.storyboard */,
 				0A5EA84A1F07E6D6006E6651 /* Assets.xcassets */,
-				0A8486E41F0C21C500897A44 /* Sentiment.mlmodel */,
 				0A5EA8551F07EE54006E6651 /* reviews.json */,
 				0A5EA84F1F07E6D6006E6651 /* Info.plist */,
+				22F368B41F3F6B70004068E8 /* Sentiment.mlmodel */,
 			);
 			path = SMDB;
 			sourceTree = "<group>";
@@ -161,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9B08951F0C8D22009C7DCD /* MovieListTableViewController.swift in Sources */,
-				0A8486E51F0C22B000897A44 /* Sentiment.mlmodel in Sources */,
 				0A5BEDCB1F0B27B900AB37C5 /* Review.swift in Sources */,
 				4C82E2531F0C9D0300C76453 /* ActorListTableViewController.swift in Sources */,
 				0A5BEDCC1F0B27BB00AB37C5 /* ReviewsManager.swift in Sources */,
