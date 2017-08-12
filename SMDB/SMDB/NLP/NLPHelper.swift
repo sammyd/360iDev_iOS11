@@ -36,7 +36,7 @@ func getLanguage(text: String) -> String? {
 }
 
 func getSearchTerms(text: String, block: (String) -> Void) {
-  let tagger = NSLinguisticTagger(tagSchemes: [.tokenType], options: 0)
+  let tagger = NSLinguisticTagger(tagSchemes: [.lemma], options: 0)
   tagger.string = text
   
   let options: NSLinguisticTagger.Options = [.omitWhitespace,
@@ -45,10 +45,9 @@ func getSearchTerms(text: String, block: (String) -> Void) {
                                              .joinNames]
   
   let range = NSRange(text.startIndex..., in: text)
-  tagger.enumerateTags(in: range, unit: .word, scheme: .tokenType, options: options) { (tag, tokenRange, _) in
-    guard tag != nil else { return }
-    let token = Range(tokenRange, in: text)!
-    block(text[token].lowercased())
+  tagger.enumerateTags(in: range, unit: .word, scheme: .lemma, options: options) { (tag, tokenRange, _) in
+    guard let tag = tag else { return }
+    block(tag.rawValue.lowercased())
   }
 }
 
