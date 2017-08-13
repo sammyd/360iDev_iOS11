@@ -4,61 +4,61 @@
     [
       {
         "id": "WEB-756",
-        "label": "Users experience playback issues when watching at 1.5 or 2x speed",
+        "description": "Users experience playback issues when watching at 1.5 or 2x speed",
         "priority": "medium",
         "context": "toDo"
       },
       {
         "id": "WEB-180",
-        "label": "The video page is missing the author bio",
+        "description": "The video page is missing the author bio",
         "priority": "low",
         "context": "toDo"
       },
       {
         "id": "WEB-273",
-        "label": "Users are unable to view challenge videos",
+        "description": "Users are unable to view challenge videos",
         "priority": "high",
         "context": "toDo"
       },
       {
         "id": "WEB-715",
-        "label": "Some users are receiving duplicate notifications",
+        "description": "Some users are receiving duplicate notifications",
         "priority":  "medium",
         "context": "toDo"
       },
       {
         "id": "WEB-211",
-        "label": "The video player isn't visible in IE 10 or Firefox on Windows",
+        "description": "The video player isn't visible in IE 10 or Firefox on Windows",
         "priority": "high",
         "context": "toDo"
       },
       {
         "id": "WEB-279",
-        "label": "Clicking, rather than hovering over a top level menu item leaves it open",
+        "description": "Clicking, rather than hovering over a top level menu item leaves it open",
         "priority": "low",
         "context": "toDo"
       },
       {
         "id": "WEB-267",
-        "label": "The slider height is specified incorrectly in video.css",
+        "description": "The slider height is specified incorrectly in video.css",
         "priority": "low",
         "context": "toDo"
       },
       {
         "id": "WEB-253",
-        "label": "The subscription status should be cached on the User model",
+        "description": "The subscription status should be cached on the User model",
         "priority": "high",
         "context": "toDo"
       },
       {
         "id": "WEB-245",
-        "label": "The active class is missing from the drop-down links in the Video menu",
+        "description": "The active class is missing from the drop-down links in the Video menu",
         "priority": "low",
         "context": "toDo"
       },
       {
         "id": "WEB-7216",
-        "label": "Users are unable to manually select the playback quality",
+        "description": "Users are unable to manually select the playback quality",
         "priority": "medium",
         "context": "toDo"
       }
@@ -67,13 +67,13 @@
     [
       {
         "id":"WEB-813",
-        "label":"Inserting media using the CMS sporadically deletes the surrounding content",
+        "description":"Inserting media using the CMS sporadically deletes the surrounding content",
         "priority": "medium",
         "context": "inProgress"
       },
       {
         "id":"WEB-696",
-        "label":"Failed orders aren't being logged correctly",
+        "description":"Failed orders aren't being logged correctly",
         "priority": "high",
         "context": "inProgress"
       }
@@ -82,25 +82,25 @@
     [
       {
         "id":"WEB-423",
-        "label":"Users can't login using the button in the forum header",
+        "description":"Users can't login using the button in the forum header",
         "priority": "medium",
         "context": "done"
       },
       {
         "id":"WEB-092",
-        "label":"Logging out should be synced across all browsers and devices",
+        "description":"Logging out should be synced across all browsers and devices",
         "priority": "low",
         "context": "done"
       },
       {
         "id":"WEB-765",
-        "label":"Push notifications can't be disabled on individual posts",
+        "description":"Push notifications can't be disabled on individual posts",
         "priority": "medium",
         "context": "done"
       },
       {
         "id":"WEB-810",
-        "label":"The syntax highlighter is excluding certain Swift keywords",
+        "description":"The syntax highlighter is excluding certain Swift keywords",
         "priority": "high",
         "context": "done"
       }

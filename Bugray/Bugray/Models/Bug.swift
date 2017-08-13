@@ -49,6 +49,13 @@ class Bug: Codable {
   var context: Context
   var priority: Priority
   
+  enum CodingKeys: String, CodingKey {
+    case id
+    case label = "description"
+    case context
+    case priority
+  }
+  
   init(id: String, label: String, context: Context = .toDo, priority: Priority = .high) {
     self.id = id
     self.label = label
