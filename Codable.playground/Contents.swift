@@ -1,17 +1,12 @@
 import UIKit
 
-
-struct Color: Codable {
-  let red, green, blue, alpha: Float
-}
-
 struct Person: Codable {
   let name: String
   let age: Int
-  let colors: [Color]
+  let relations: [String : String]
 }
 
-let p1 = Person(name: "nancy", age: 26, colors: [Color(red: 0.1, green: 0.4, blue: 1, alpha: 0.1)])
+let p1 = Person(name: "nancy", age: 26, relations: ["mum" : "Lucy", "dad" : "Peter"])
 
 let encoder = JSONEncoder()
 let data = try! encoder.encode(p1)
