@@ -3,13 +3,20 @@ import UIKit
 
 extension UIColor: Encodable {
   public func encode(to encoder: Encoder) throws {
-    var container = encoder.unkeyedContainer()
+    enum ColorKeys: CodingKey {
+      case red
+      case blue
+      case green
+      case alpha
+    }
+    
+    var container = encoder.container(keyedBy: ColorKeys.self)
     var color : (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) = (0, 0, 0, 0)
     getRed(&color.r, green: &color.g, blue: &color.b, alpha: &color.a)
-    try container.encode(color.r)
-    try container.encode(color.g)
-    try container.encode(color.b)
-    try container.encode(color.a)
+    try container.encode(color.r, forKey: .red)
+    try container.encode(color.g, forKey: .green)
+    try container.encode(color.b, forKey: .blue)
+    try container.encode(color.a, forKey: .alpha)
   }
 }
 
